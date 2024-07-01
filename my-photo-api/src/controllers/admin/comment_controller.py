@@ -1,0 +1,2 @@
+class AdminCommentController:
+    pass

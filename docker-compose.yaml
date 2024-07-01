@@ -1,0 +1,29 @@
+services:
+  frontend:
+    build:
+      context: ./my-photo
+      dockerfile: Dockerfile
+    container_name: frontend
+    restart: unless-stopped
+    volumes:
+      - ./my-photo:/app
+    networks:
+      - my-photo-network
+    ports:
+      - "3000:80"
+  backend:
+    build:
+      context: ./my-photo-api
+      dockerfile: Dockerfile
+    container_name: backend
+    restart: unless-stopped
+    networks:
+      - my-photo-network
+    ports:
+      - "8001:8000"
+    expose:
+      - "8000"
+  
+networks:
+  my-photo-network:
+    name: my-photo-network

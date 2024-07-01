@@ -1,0 +1,2 @@
+class PhotoController:
+    pass

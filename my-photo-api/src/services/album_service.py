@@ -1,0 +1,2 @@
+class AlbumService:
+    pass
