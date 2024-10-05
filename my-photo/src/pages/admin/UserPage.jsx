@@ -60,7 +60,7 @@ const UserPage = () => {
   const loadUsers = () => {
     setIsLoadingTable(true);
 
-    fetch("http://localhost:3000/api/v1/admin/users/")
+    fetch("/api/v1/admin/users/")
       .then((response) => response.json())
       .then((json) => {
         setUsers(json);
@@ -73,7 +73,7 @@ const UserPage = () => {
   const loadUserDetail = (id) => {
     setIsLoadingModal(true);
 
-    fetch(`http://localhost:3000/api/v1/admin/users/${id}`)
+    fetch(`/api/v1/admin/users/${id}`)
       .then((response) => response.json())
       .then((json) => {
         setUserDetail(json);
