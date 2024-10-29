@@ -1,7 +1,7 @@
 # Build React app
 FROM node:20.15.0-alpine as build-step
 WORKDIR /app
-ENV PATH ./node_modules/.bin:$PATH
+# ENV PATH ./node_modules/.bin:$PATH
 COPY package*.json ./
 COPY . .
 RUN npm install
